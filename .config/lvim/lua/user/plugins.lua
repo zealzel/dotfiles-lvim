@@ -80,30 +80,6 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
-  -- { not working
-  --   "max397574/better-escape.nvim",
-  --   config = function()
-  --     require("better_escape").setup({})
-  --   end
-  -- },
-  -- To allow copilot to work with cmp. https://github.com/LunarVim/LunarVim/issues/1856
-  {
-    "github/copilot.vim",
-    -- disable = not lvim.builtin.sell_soul_to_devel,
-    config = function()
-      -- copilot assume mapped
-      vim.g.copilot_assume_mapped = true
-      vim.g.copilot_no_tab_map = true
-    end
-  },
-  {
-    "hrsh7th/cmp-copilot",
-    -- disable = not lvim.builtin.sell_soul_to_devel,
-    config = function()
-      lvim.builtin.cmp.formatting.source_names["copilot"] = "(Cop)"
-      table.insert(lvim.builtin.cmp.sources, { name = "copilot" })
-    end
-  },
   "junegunn/vim-peekaboo",
   "m00qek/baleia.nvim",
   {
