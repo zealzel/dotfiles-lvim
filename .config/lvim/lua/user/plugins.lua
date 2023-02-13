@@ -1,8 +1,10 @@
-
 -- Additional Plugins
 lvim.plugins = {
+
   -- My preferred colorscheme
   "morhetz/gruvbox",
+  "ajmwagar/vim-deus",
+  "catppuccin/nvim", name = "catppuccin",
   -- Syntax aware text-objects, select, move, swap, and peek support.
   "nvim-treesitter/nvim-treesitter-textobjects",
   -- Whenever cursor jumps some distance or moves between windows, it will flash so you can see where it is

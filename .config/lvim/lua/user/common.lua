@@ -1,16 +1,20 @@
 reload("user.keymap")
 reload("user.options")
-reload("user.theme")
 reload("user.null-ls")
 reload("user.plugins")
+reload("user.theme")
+
+
 
 lvim.format_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enable = true
 
--- lvim.colorscheme = "lunar"
-lvim.colorscheme = "gruvbox" -- gruvbox/tokyonight-night/tokyonight-moon/tokyonight-storm
+-- Use :colorscheme xxx to change the colorscheme in real time
+-- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus
+-- lvim.colorscheme = "gruvbox"
+lvim.colorscheme = "deus"
 
 -- Setup Treesitter textobjects
 -- ref: https://github.com/LunarVim/LunarVim/issues/2730
