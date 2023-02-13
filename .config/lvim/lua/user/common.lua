@@ -4,8 +4,6 @@ reload("user.null-ls")
 reload("user.plugins")
 reload("user.theme")
 
-
-
 lvim.format_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
