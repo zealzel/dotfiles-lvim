@@ -2,7 +2,15 @@
 -- Python plugins
 -- ==============================================================================
 -- vim.g.python3_host_prog = "~/.pyenv/versions/3.10.8/bin/python3.10"
-vim.g.python3_host_prog = "/usr/bin/python3"
+
+
+if vim.loop.os_uname().sysname == 'Darwin' then
+  -- print("Darwin")
+  vim.g.python3_host_prog = "$(which python)"
+elseif vim.loop.os_uname().sysname == 'Linux' then
+  -- print("Linux")
+  vim.g.python3_host_prog = "/usr/bin/python3"
+end
 
 -- All the treesitter parsers you want to install. If you want all of them, just
 -- replace everything with "all".
@@ -39,6 +47,7 @@ formatters.setup({
 -- Set a linter.
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
+  { command = "ruff" },
   {
     command = "flake8",
     filetypes = {

@@ -10,9 +10,9 @@ lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enable = true
 
 -- Use :colorscheme xxx to change the colorscheme in real time
--- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus
+-- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
 -- lvim.colorscheme = "gruvbox"
-lvim.colorscheme = "deus"
+lvim.colorscheme = "catppuccin-macchiato"
 
 -- Setup Treesitter textobjects
 -- ref: https://github.com/LunarVim/LunarVim/issues/2730
