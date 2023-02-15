@@ -94,6 +94,7 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  "jay-babu/mason-null-ls.nvim",
   -- { not working
   --   "max397574/better-escape.nvim",
   --   config = function()
