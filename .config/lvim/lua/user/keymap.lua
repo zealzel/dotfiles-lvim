@@ -33,3 +33,5 @@ lvim.keys.normal_mode["<leader>C"] = ":DiffviewClose <CR>"
 -- lvim.keys.normal_mode["<leader>grbc"] = ":Git rebase --continue<CR>"
 -- lvim.keys.normal_mode["<leader>grba"] = ":Git rebase --abort<CR>"
 
+-- ToggleTerm TermExec
+lvim.keys.normal_mode["<leader>ts"] = ":2TermExec cmd='spt'<CR>"
