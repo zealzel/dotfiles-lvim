@@ -5,7 +5,7 @@ reload("user.plugins")
 reload("user.theme")
 
 lvim.lsp.installer.setup.ensure_installed = {
-  "bash-language-server",
+  "bashls",
 }
 
 require("mason-null-ls").setup({
