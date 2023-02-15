@@ -94,6 +94,7 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  "jay-babu/mason-null-ls.nvim",
   "junegunn/vim-peekaboo",
   "m00qek/baleia.nvim",
   {
