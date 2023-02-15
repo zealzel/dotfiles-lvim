@@ -4,7 +4,7 @@ lvim.plugins = {
   -- My preferred colorscheme
   "morhetz/gruvbox",
   "ajmwagar/vim-deus",
-  { "catppuccin/nvim", name = "catppuccin" },
+  { "catppuccin/nvim",       name = "catppuccin" },
   { "arturgoms/moonbow.nvim" },
   -- Syntax aware text-objects, select, move, swap, and peek support.
   "nvim-treesitter/nvim-treesitter-textobjects",
@@ -88,7 +88,13 @@ lvim.plugins = {
   --================================================
   -- To be added in the future
   --================================================
-  "hrsh7th/cmp-nvim-lua",
+  {
+    "hrsh7th/cmp-nvim-lua",
+    config = function()
+      require("cmp").setup({})
+    end
+  },
+
   "onsails/lspkind.nvim",
 
   --================================================
@@ -152,3 +158,4 @@ lvim.plugins = {
     }
   },
 }
+
