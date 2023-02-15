@@ -4,15 +4,33 @@ reload("user.null-ls")
 reload("user.plugins")
 reload("user.theme")
 
+lvim.lsp.installer.setup.ensure_installed = {
+  "bash-language-server",
+}
+
+require("mason-null-ls").setup({
+  ensure_installed = {
+    "stylua",
+    "jq",
+    "shellharden",
+    "shfmt",
+    "prettier",
+    "black",
+    "flake8",
+    "jsonlint",
+    "yamllint",
+  }
+})
+
 lvim.format_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enable = true
 
 -- Use :colorscheme xxx to change the colorscheme in real time
--- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus
+-- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
 -- lvim.colorscheme = "gruvbox"
-lvim.colorscheme = "deus"
+lvim.colorscheme = "gruvbox"
 
 -- Setup Treesitter textobjects
 -- ref: https://github.com/LunarVim/LunarVim/issues/2730

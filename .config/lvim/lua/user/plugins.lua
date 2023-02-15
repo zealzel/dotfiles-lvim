@@ -5,6 +5,7 @@ lvim.plugins = {
   "morhetz/gruvbox",
   "ajmwagar/vim-deus",
   { "catppuccin/nvim", name = "catppuccin" },
+  { "arturgoms/moonbow.nvim" },
   -- Syntax aware text-objects, select, move, swap, and peek support.
   "nvim-treesitter/nvim-treesitter-textobjects",
   -- Whenever cursor jumps some distance or moves between windows, it will flash so you can see where it is
@@ -38,11 +39,17 @@ lvim.plugins = {
   {
     -- A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI.
     "glepnir/lspsaga.nvim",
+    event = "BufRead",
     branch = "main",
     config = function()
       require("lspsaga").setup({})
       -- saga.init_lsp_saga({})
     end,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+      --Please make sure you install markdown and markdown_inline parser
+      { "nvim-treesitter/nvim-treesitter" }
+    }
   },
   -- {
   --   -- TabNine completion engine for hrsh7th/nvim-cmp
@@ -71,6 +78,13 @@ lvim.plugins = {
   --    Find history of one file, :DiffviewFileHistory %
   "sindrets/diffview.nvim",
 
+  { -- Markdown preview
+    -- ref: https://www.reddit.com/r/neovim/comments/10w4u51/comment/j7lpl9u/?utm_source=share&utm_medium=web2x&context=3
+    "iamcco/markdown-preview.nvim",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
   --================================================
   -- To be added in the future
   --================================================
