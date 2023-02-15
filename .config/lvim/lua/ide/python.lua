@@ -47,7 +47,7 @@ formatters.setup({
 -- Set a linter.
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-  { command = "ruff" },
+  -- { command = "ruff" },
   {
     command = "flake8",
     filetypes = {
