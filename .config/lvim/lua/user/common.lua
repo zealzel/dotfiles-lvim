@@ -1,7 +1,10 @@
 reload("user.keymap")
+reload("user.whichkey")
 reload("user.options")
 reload("user.null-ls")
 reload("user.plugins")
+reload("user.surround")
+reload("user.comment")
 reload("user.theme")
 
 lvim.lsp.installer.setup.ensure_installed = {
@@ -26,6 +29,9 @@ lvim.format_on_save = false
 lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enable = true
+
+lvim.builtin.comment.mappings.basic = false
+lvim.builtin.comment.mappings.extra = false
 
 -- Use :colorscheme xxx to change the colorscheme in real time
 -- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
