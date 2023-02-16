@@ -6,7 +6,7 @@
 
 if vim.loop.os_uname().sysname == 'Darwin' then
   -- print("Darwin")
-  vim.g.python3_host_prog = "$(which python)"
+  vim.g.python3_host_prog = "$HOME/.pyenv/shims/python3"
 elseif vim.loop.os_uname().sysname == 'Linux' then
   -- print("Linux")
   vim.g.python3_host_prog = "/usr/bin/python3"

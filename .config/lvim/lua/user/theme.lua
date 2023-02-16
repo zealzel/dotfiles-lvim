@@ -34,4 +34,4 @@ lvim.autocommands = {
 }
 
 -- Remove tilda ~ sign in empty lines
-vim.opt.fillchars = { eob = " "}
+vim.opt.fillchars = { eob = " " }
