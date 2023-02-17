@@ -100,18 +100,12 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
-  -- { not working
-  --   "KadoBOT/nvim-spotify",
-  --   config = function()
-  --     require('nvim-spotify').setup {
-  --       status = {
-  --         update_interval = 10000, -- the interval (ms) to check for what's currently playing
-  --         format = '%s %t by %a' -- spotify-tui --format argument
-  --       }
-  --     }
-  --   end,
-  --   dependencies = 'nvim-telescope/telescope.nvim',
-  -- },
+  "opalmay/vim-smoothie",
+  { "folke/todo-comments.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end
+  },
   "jay-babu/mason-null-ls.nvim",
   -- { not working
   --   "max397574/better-escape.nvim",
