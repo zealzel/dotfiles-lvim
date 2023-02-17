@@ -52,7 +52,7 @@ lvim.builtin.which_key.mappings["g"] = {
   g = { "<cmd>lua require 'lvim.core.terminal'.lazygit_toggle(12000)<cr>", "Lazygit" },
 
   -- Fugitive
-  l = { ":Git blame", "Blame" },
+  l = { ":Git blame<cr>", "Blame" },
   -- c = { ":Git commit<cr>", "Commit" },
   ca = { ":Git commit --amend<cr>", "Commit amend" },
 
