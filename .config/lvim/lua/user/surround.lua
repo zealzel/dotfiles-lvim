@@ -5,10 +5,8 @@ end
 
 surround.setup {
   keymaps = { -- vim-surround style keymaps
-    insert = {},
-    insert_line = {},
-    normal = nil,
-    normal_cur = nil,
+    insert = nil,
+    insert_line = nil,
   },
   -- official's default
   -- keymaps = {
