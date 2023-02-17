@@ -100,6 +100,7 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  "christianchiarulli/harpoon",
   "opalmay/vim-smoothie",
   { "folke/todo-comments.nvim",
     config = function()
