@@ -1,4 +1,3 @@
-
 -- my options
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
@@ -37,3 +36,6 @@ vim.opt.scrolloff = 0
 -- guifont = "monospace:h17", -- the font used in graphical neovim applications
 
 
+vim.g.mkdp_auto_start = 0
+vim.g.mkdp_auto_close = 0
+vim.g.mkdp_browser = 'firefox'

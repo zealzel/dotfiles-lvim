@@ -100,6 +100,7 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  "nvim-pack/nvim-spectre",
   "kevinhwang91/nvim-bqf",
   "christianchiarulli/harpoon",
   "opalmay/vim-smoothie",

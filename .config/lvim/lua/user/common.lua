@@ -33,6 +33,8 @@ lvim.builtin.treesitter.highlight.enable = true
 lvim.builtin.comment.mappings.basic = false
 lvim.builtin.comment.mappings.extra = false
 
+lvim.builtin.telescope.defaults.layout_config.width = 0.7
+
 -- Use :colorscheme xxx to change the colorscheme in real time
 -- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
 -- lvim.colorscheme = "gruvbox"
