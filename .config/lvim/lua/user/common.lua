@@ -26,7 +26,7 @@ require("mason-null-ls").setup({
 })
 
 lvim.format_on_save = false
-lvim.lsp.diagnostics.virtual_text = false
+-- lvim.lsp.diagnostics.virtual_text = false
 lvim.builtin.terminal.active = true
 lvim.builtin.treesitter.highlight.enable = true
 

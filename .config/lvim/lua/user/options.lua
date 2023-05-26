@@ -1,6 +1,7 @@
 -- my options
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
+vim.opt.modeline = false
 -- backup = false, -- creates a backup file
 -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 -- cmdheight = 1, -- neovim command line for displaying messages
