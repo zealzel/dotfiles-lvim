@@ -103,7 +103,8 @@ lvim.plugins = {
   "nvim-pack/nvim-spectre",
   "kevinhwang91/nvim-bqf",
   "christianchiarulli/harpoon",
-  "opalmay/vim-smoothie",
+  -- "opalmay/vim-smoothie",
+  "psliwka/vim-smoothie",
   { "folke/todo-comments.nvim",
     config = function()
       require("todo-comments").setup()
