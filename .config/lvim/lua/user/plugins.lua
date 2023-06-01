@@ -102,7 +102,8 @@ lvim.plugins = {
   --================================================
   "nvim-pack/nvim-spectre",
   "kevinhwang91/nvim-bqf",
-  "christianchiarulli/harpoon",
+  -- "christianchiarulli/harpoon",
+  "ThePrimeagen/harpoon",
   -- "opalmay/vim-smoothie",
   "psliwka/vim-smoothie",
   { "folke/todo-comments.nvim",
