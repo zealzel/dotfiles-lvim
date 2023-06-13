@@ -26,3 +26,6 @@ lvim.keys.normal_mode["<leader>C"] = ":DiffviewClose <CR>"
 
 -- ToggleTerm TermExec
 lvim.keys.normal_mode["<leader>ts"] = ":2TermExec cmd='spt'<CR>"
+
+-- keymap('n', '<space>', 'za', opts)
+-- lvim.keys.normal_mode["<space>"] = { "za", opts }

@@ -48,9 +48,10 @@ lvim.plugins = {
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
-      { "nvim-treesitter/nvim-treesitter" }
+      { "nvim-treesitter/nvim-treesitter" },
     }
   },
+  -- { "adelarsq/vim-devicons-emoji" },
   -- {
   --   -- TabNine completion engine for hrsh7th/nvim-cmp
   --   "tzachar/cmp-tabnine",
@@ -106,7 +107,8 @@ lvim.plugins = {
   "ThePrimeagen/harpoon",
   -- "opalmay/vim-smoothie",
   "psliwka/vim-smoothie",
-  { "folke/todo-comments.nvim",
+  {
+    "folke/todo-comments.nvim",
     config = function()
       require("todo-comments").setup()
     end
@@ -157,6 +159,7 @@ lvim.plugins = {
   },
   {
     "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
     config = function()
       require("chatgpt").setup({
         -- optional configuration

@@ -40,3 +40,8 @@ vim.opt.modeline = false
 vim.g.mkdp_auto_start = 0
 vim.g.mkdp_auto_close = 0
 vim.g.mkdp_browser = 'firefox'
+
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99
