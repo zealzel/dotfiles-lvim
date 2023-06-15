@@ -79,7 +79,8 @@ lvim.plugins = {
   --    Find history of one file, :DiffviewFileHistory %
   "sindrets/diffview.nvim",
 
-  { -- Markdown preview
+  {
+    -- Markdown preview
     -- ref: https://www.reddit.com/r/neovim/comments/10w4u51/comment/j7lpl9u/?utm_source=share&utm_medium=web2x&context=3
     "iamcco/markdown-preview.nvim",
     build = function()
@@ -170,5 +171,11 @@ lvim.plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
+  },
+  {
+    'nosduco/remote-sshfs.nvim',
+    config = function()
+      require("remote-sshfs").setup({})
+    end,
   },
 }
