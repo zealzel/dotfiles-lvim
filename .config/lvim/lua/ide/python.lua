@@ -47,7 +47,13 @@ formatters.setup({
 -- Set a linter.
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-  { command = "ruff" },
+  {
+    command = "ruff",
+    extra_args = {
+      "--line-length",
+      "95",
+    },
+  },
   {
     command = "flake8",
     filetypes = {
@@ -55,7 +61,7 @@ linters.setup({
     },
     extra_args = {
       "--max-line-length",
-      "88",
+      "95",
     },
   },
 })
