@@ -157,6 +157,18 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  {
+    -- https://github.com/mg979/vim-visual-multi/issues/241
+    "mg979/vim-visual-multi",
+    branch = "master",
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"]      = "<c-m>",
+        -- ["Add Cursor Down"] = '<M>j',
+        -- ["Add Cursor Up"]   = '<M>k',
+      }
+    end,
+  },
   "nvim-pack/nvim-spectre",
   "kevinhwang91/nvim-bqf",
   -- "christianchiarulli/harpoon",
