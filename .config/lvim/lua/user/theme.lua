@@ -1,4 +1,7 @@
--- lvim.colorscheme = "lunar"
+-- Use :colorscheme xxx to change the colorscheme in real time
+-- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
+
+lvim.colorscheme = "gruvbox"
 --
 -- lvim.colorscheme = "gruvbox" -- gruvbox/tokyonight-night/tokyonight-moon/tokyonight-storm
 vim.opt.background = "dark"

@@ -157,13 +157,24 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  "Vimjas/vim-python-pep8-indent",
+  {
+    -- https://github.com/kiyoon/jupynium.nvim
+    "kiyoon/jupynium.nvim",
+    build = "pip3 install --user .",
+    -- build = "conda run --no-capture-output -n jupynium pip install .",
+    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+  },
+  "hrsh7th/nvim-cmp",       -- optional, for completion
+  "rcarriga/nvim-notify",   -- optional
+  "stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
   {
     -- https://github.com/mg979/vim-visual-multi/issues/241
     "mg979/vim-visual-multi",
     branch = "master",
     init = function()
       vim.g.VM_maps = {
-        ["Find Under"]      = "<c-m>",
+        ["Find Under"] = "<c-m>",
         -- ["Add Cursor Down"] = '<M>j',
         -- ["Add Cursor Up"]   = '<M>k',
       }

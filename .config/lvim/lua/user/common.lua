@@ -38,7 +38,6 @@ lvim.builtin.telescope.defaults.layout_config.width = 0.7
 -- Use :colorscheme xxx to change the colorscheme in real time
 -- colorschemes: gruvbox|lunar|catppuccin-latte|catppuccin-frappe|catppuccin-macchiato|catppuccin-mocha|deus|moonbow
 -- lvim.colorscheme = "gruvbox"
-lvim.colorscheme = "gruvbox"
 
 -- Setup Treesitter textobjects
 -- ref: https://github.com/LunarVim/LunarVim/issues/2730
@@ -62,7 +61,7 @@ ts.textobjects = {
   },
   move = {
     enable = true,
-    set_jumps = true,   -- whether to set jumps in the jumplist
+    set_jumps = true, -- whether to set jumps in the jumplist
     goto_next_start = {
       ["]m"] = "@function.outer",
       ["]]"] = { query = "@class.outer", desc = "Next class start" },
@@ -100,3 +99,8 @@ ts.textobjects = {
   },
 
 }
+-- ts.indent = { disable = { "python" } }
+
+-- tricks in lunarvim
+-- # Temporarily disable diagnostics for certain buffer
+-- :lua vim.diagnostic.disable()
