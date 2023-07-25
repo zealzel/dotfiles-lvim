@@ -157,9 +157,13 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  -- https://betterprogramming.pub/lunarvim-debugging-testing-python-code-fa84f804c469
+  "mfussenegger/nvim-dap-python",
+  "nvim-neotest/neotest",
+  "nvim-neotest/neotest-python",
   "Vimjas/vim-python-pep8-indent",
   {
-    -- https://github.com/kiyoon/jupynium.nvim
+    -- Selenium-automated Jupyter Notebook that is synchronised with NeoVim in real-time.
     "kiyoon/jupynium.nvim",
     build = "pip3 install --user .",
     -- build = "conda run --no-capture-output -n jupynium pip install .",
