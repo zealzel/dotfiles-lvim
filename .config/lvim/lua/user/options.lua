@@ -1,7 +1,13 @@
 -- my options
+lvim.builtin.comment.active = true
+lvim.builtin.comment.mappings.basic = true
+lvim.builtin.comment.mappings.extra = true
+lvim.builtin.comment.pre_hook = nil
+--
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
 vim.opt.modeline = false
+vim.opt.timeoutlen = 1000
 -- backup = false, -- creates a backup file
 -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 -- cmdheight = 1, -- neovim command line for displaying messages
