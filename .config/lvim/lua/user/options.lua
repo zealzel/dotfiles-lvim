@@ -1,7 +1,13 @@
-
 -- my options
+lvim.builtin.comment.active = true
+lvim.builtin.comment.mappings.basic = true
+lvim.builtin.comment.mappings.extra = true
+lvim.builtin.comment.pre_hook = nil
+--
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
+vim.opt.modeline = false
+vim.opt.timeoutlen = 1000
 -- backup = false, -- creates a backup file
 -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 -- cmdheight = 1, -- neovim command line for displaying messages
@@ -37,3 +43,11 @@ vim.opt.scrolloff = 0
 -- guifont = "monospace:h17", -- the font used in graphical neovim applications
 
 
+vim.g.mkdp_auto_start = 0
+vim.g.mkdp_auto_close = 0
+vim.g.mkdp_browser = 'firefox'
+
+
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 99

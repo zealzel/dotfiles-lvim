@@ -6,7 +6,7 @@
 
 if vim.loop.os_uname().sysname == 'Darwin' then
   -- print("Darwin")
-  vim.g.python3_host_prog = "$(which python)"
+  vim.g.python3_host_prog = "$HOME/.pyenv/shims/python3"
 elseif vim.loop.os_uname().sysname == 'Linux' then
   -- print("Linux")
   vim.g.python3_host_prog = "/usr/bin/python3"
@@ -47,7 +47,13 @@ formatters.setup({
 -- Set a linter.
 local linters = require("lvim.lsp.null-ls.linters")
 linters.setup({
-  -- { command = "ruff" },
+  {
+    command = "ruff",
+    extra_args = {
+      "--line-length",
+      "95",
+    },
+  },
   {
     command = "flake8",
     filetypes = {
@@ -55,7 +61,7 @@ linters.setup({
     },
     extra_args = {
       "--max-line-length",
-      "88",
+      "95",
     },
   },
 })

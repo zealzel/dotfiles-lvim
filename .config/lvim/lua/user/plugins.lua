@@ -29,12 +29,67 @@ lvim.plugins = {
       require("nvim-surround").setup()
     end,
   },
+  -- {
+  --   -- 🦘 Interface that makes on-screen navigation quicker and more natural than ever
+  --   "ggandor/leap.nvim",
+  --   config = function()
+  --     require("leap").add_default_mappings()
+  --   end,
+  -- },
   {
-    -- 🦘 Interface that makes on-screen navigation quicker and more natural than ever
-    "ggandor/leap.nvim",
-    config = function()
-      require("leap").add_default_mappings()
-    end,
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          require("flash").jump(
+            {
+              search = {
+                mode = function(str)
+                  return "\\<" .. str
+                end,
+              },
+            }
+          )
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "o", "x" },
+        function()
+          require("flash").treesitter_search()
+        end,
+        desc = "Flash Treesitter Search",
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function()
+          require("flash").toggle()
+        end,
+        desc = "Toggle Flash Search",
+      },
+    },
   },
   {
     -- A light-weight lsp plugin based on neovim's built-in lsp with a highly performant UI.
@@ -48,9 +103,10 @@ lvim.plugins = {
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
-      { "nvim-treesitter/nvim-treesitter" }
+      { "nvim-treesitter/nvim-treesitter" },
     }
   },
+  -- { "adelarsq/vim-devicons-emoji" },
   -- {
   --   -- TabNine completion engine for hrsh7th/nvim-cmp
   --   "tzachar/cmp-tabnine",
@@ -78,7 +134,8 @@ lvim.plugins = {
   --    Find history of one file, :DiffviewFileHistory %
   "sindrets/diffview.nvim",
 
-  { -- Markdown preview
+  {
+    -- Markdown preview
     -- ref: https://www.reddit.com/r/neovim/comments/10w4u51/comment/j7lpl9u/?utm_source=share&utm_medium=web2x&context=3
     "iamcco/markdown-preview.nvim",
     build = function()
@@ -100,6 +157,45 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  -- https://betterprogramming.pub/lunarvim-debugging-testing-python-code-fa84f804c469
+  "mfussenegger/nvim-dap-python",
+  "nvim-neotest/neotest",
+  "nvim-neotest/neotest-python",
+  "Vimjas/vim-python-pep8-indent",
+  {
+    -- Selenium-automated Jupyter Notebook that is synchronised with NeoVim in real-time.
+    "kiyoon/jupynium.nvim",
+    build = "pip3 install --user .",
+    -- build = "conda run --no-capture-output -n jupynium pip install .",
+    -- enabled = vim.fn.isdirectory(vim.fn.expand "~/miniconda3/envs/jupynium"),
+  },
+  "hrsh7th/nvim-cmp",       -- optional, for completion
+  "rcarriga/nvim-notify",   -- optional
+  "stevearc/dressing.nvim", -- optional, UI for :JupyniumKernelSelect
+  {
+    -- https://github.com/mg979/vim-visual-multi/issues/241
+    "mg979/vim-visual-multi",
+    branch = "master",
+    init = function()
+      vim.g.VM_maps = {
+        ["Find Under"] = "<c-m>",
+        -- ["Add Cursor Down"] = '<M>j',
+        -- ["Add Cursor Up"]   = '<M>k',
+      }
+    end,
+  },
+  "nvim-pack/nvim-spectre",
+  "kevinhwang91/nvim-bqf",
+  -- "christianchiarulli/harpoon",
+  "ThePrimeagen/harpoon",
+  -- "opalmay/vim-smoothie",
+  "psliwka/vim-smoothie",
+  {
+    "folke/todo-comments.nvim",
+    config = function()
+      require("todo-comments").setup()
+    end
+  },
   "jay-babu/mason-null-ls.nvim",
   "junegunn/vim-peekaboo",
   "m00qek/baleia.nvim",
@@ -121,4 +217,3 @@ lvim.plugins = {
     end,
   },
 }
-
