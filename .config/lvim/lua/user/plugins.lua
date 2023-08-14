@@ -240,24 +240,24 @@ lvim.plugins = {
       }
     end,
   },
-  -- {
-  --   "jackMort/ChatGPT.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("chatgpt").setup({
-  --       -- optional configuration
-  --     })
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "nvim-telescope/telescope.nvim"
-  --   }
-  -- },
-  -- {
-  --   'nosduco/remote-sshfs.nvim',
-  --   config = function()
-  --     require("remote-sshfs").setup({})
-  --   end,
-  -- },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  },
+  {
+    'nosduco/remote-sshfs.nvim',
+    config = function()
+      require("remote-sshfs").setup({})
+    end,
+  },
 }
