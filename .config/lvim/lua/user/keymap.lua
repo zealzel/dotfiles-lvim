@@ -7,6 +7,7 @@ lvim.keys.normal_mode["<C-q>"] = ":q<cr>"
 lvim.keys.normal_mode["<tab>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<s-tab>"] = ":bprevious<cr>"
 lvim.keys.normal_mode["<C-n>"] = ":NvimTreeToggle<cr>"
+lvim.keys.normal_mode["Z"] = "za"
 
 -- tips for Replace a word with yanked text.
 -- ref: https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text
@@ -25,7 +26,8 @@ lvim.keys.normal_mode["<leader>C"] = ":DiffviewClose <CR>"
 -- lvim.keys.normal_mode["<leader>grba"] = ":Git rebase --abort<CR>"
 
 -- ToggleTerm TermExec
-lvim.keys.normal_mode["<leader>ts"] = ":2TermExec cmd='spt'<CR>"
+-- lvim.keys.normal_mode["<leader>ts"] = ":2TermExec cmd='spt'<CR>"
 
--- keymap('n', '<space>', 'za', opts)
--- lvim.keys.normal_mode["<space>"] = { "za", opts }
+-- keymap('n', '<enter>', 'za', opts)
+-- lvim.keys.normal_mode["<enter>"] = { "za", opts }
+-- lvim.keys.normal_mode["<CR>"] = { "za", opts }

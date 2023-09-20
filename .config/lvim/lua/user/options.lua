@@ -8,6 +8,7 @@ vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
 vim.opt.modeline = false
 vim.opt.timeoutlen = 1000
+vim.opt.conceallevel = 2 -- so that links cam be shorten in neog, ref: https://github.com/nvim-neorg/neorg/issues/40#issuecomment-890300243
 -- backup = false, -- creates a backup file
 -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 -- cmdheight = 1, -- neovim command line for displaying messages
@@ -51,3 +52,24 @@ vim.g.mkdp_browser = 'firefox'
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
+
+-- Ref: https://www.reddit.com/r/neovim/comments/zptidv/auto_command_for_persistent_folds/
+-- Persistent Folds
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local save_fold = augroup("Persistent Folds", { clear = true })
+autocmd("BufWinLeave", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.mkview()
+  end,
+  group = save_fold,
+})
+autocmd("BufWinEnter", {
+  pattern = "*.*",
+  callback = function()
+    vim.cmd.loadview({ mods = { emsg_silent = true } })
+  end,
+  group = save_fold,
+})
+

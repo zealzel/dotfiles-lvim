@@ -263,12 +263,15 @@ lvim.plugins = {
   {
     -- https://www.reddit.com/r/neovim/comments/zxo111/neorg_does_not_install_at_all/
     'nvim-neorg/neorg',
-    ft = 'norg',   -- lazy load on filetype
-    cmd = 'Neorg', -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
+    ft = 'norg',                   -- lazy load on filetype
+    cmd = 'Neorg',                 -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
     --  (you could also just remove both lazy loading things)
-    priority = 30, -- treesitter is on default priority of 50, neorg should load after it.
+    priority = 30,                 -- treesitter is on default priority of 50, neorg should load after it.
+    build = ":Neorg sync-parsers", -- This is the important bit!
     config = function()
       require('neorg').setup {
+        configure_parsers = true,
+        install_parsers = true,
         load = {
           ['core.defaults'] = {},
           ["core.concealer"] = {}, -- Adds pretty icons to your documents
@@ -277,11 +280,32 @@ lvim.plugins = {
               workspaces = {
                 notes = "~/notes",
               },
+              default_workspace = "notes",
             },
           },
+          ["core.export"] = {},
+          ["core.export.markdown"] = {},
         },
         highlight = { enable = true, },
       }
     end
   },
+  {
+    "folke/paint.nvim",
+    config = function()
+      require("paint").setup({
+        ---@type PaintHighlight[]
+        highlights = {
+          {
+            -- filter can be a table of buffer options that should match,
+            -- or a function called with buf as param that should return true.
+            -- The example below will paint @something in comments with Constant
+            filter = { filetype = "lua" },
+            pattern = "%s*%-%-%-%s*(@%w+)",
+            hl = "Constant",
+          },
+        },
+      })
+    end,
+  }
 }
