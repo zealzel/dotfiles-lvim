@@ -190,7 +190,9 @@ lvim.plugins = {
   "ThePrimeagen/harpoon",
   {
     "karb94/neoscroll.nvim",
-    require('neoscroll').setup({})
+    config = function()
+      require('neoscroll').setup()
+    end
   },
   "jay-babu/mason-null-ls.nvim",
   -- { not working
