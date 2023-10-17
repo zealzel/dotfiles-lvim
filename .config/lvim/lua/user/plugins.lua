@@ -298,19 +298,61 @@ lvim.plugins = {
   {
     "folke/paint.nvim",
     config = function()
+
+      local hlmap = {
+        ["^#%s+(.-)%s*$"] = "Operator",
+        ["^##%s+(.-)%s*$"] = "Type",
+        ["^###%s+(.-)%s*$"] = "String",
+        ["^####%s+(.-)%s*$"] = "Constant",
+        ["^#####%s+(.-)%s*$"] = "Number",
+        ["^######%s+(.-)%s*$"] = "Error",
+      }
+      local highlights = {}
+      for pattern, hl in pairs(hlmap) do
+        table.insert(highlights, {
+          filter = { filetype = "markdown" },
+          pattern = pattern,
+          hl = hl,
+        })
+      end
+
+      local hlmap_norg = {
+        ["^%*%s+(.-)%s*$"] = "GruvboxYellow",
+        ["^%*%*%s+(.-)%s*$"] = "GruvboxOrange",
+        ["^%*%*%*%s+(.-)%s*$"] = "GruvboxPurple",
+        ["^%*%*%*%*%s+(.-)%s*$"] = "GruvboxAqua",
+        ["^%*%*%*%*%*%s+(.-)%s*$"] = "GruvboxRed",
+        ["^%*%*%*%*%*%*%s+(.-)%s*$"] = "GruvboxGreen",
+      }
+      local highlights_norg = {}
+      for pattern, hl in pairs(hlmap_norg) do
+        table.insert(highlights_norg, {
+          filter = { filetype = "norg" },
+          pattern = pattern,
+          hl = hl,
+        })
+      end
+
       require("paint").setup({
         ---@type PaintHighlight[]
-        highlights = {
-          {
-            -- filter can be a table of buffer options that should match,
-            -- or a function called with buf as param that should return true.
-            -- The example below will paint @something in comments with Constant
-            filter = { filetype = "lua" },
-            pattern = "%s*%-%-%-%s*(@%w+)",
-            hl = "Constant",
-          },
-        },
+        -- highlights = highlights,
+        highlights = highlights_norg,
       })
+
+      -- require("paint").setup({
+      --   ---@type PaintHighlight[]
+
+      --   highlights = {
+      --     {
+      --       -- filter can be a table of buffer options that should match,
+      --       -- or a function called with buf as param that should return true.
+      --       -- The example below will paint @something in comments with Constant
+      --       filter = { filetype = "lua" },
+      --       pattern = "%s*%-%-%-%s*(@%w+)",
+      --       hl = "Constant",
+      --     },
+      --   },
+      -- })
     end,
   }
 }
