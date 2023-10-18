@@ -8,6 +8,9 @@ lvim.keys.normal_mode["<tab>"] = ":bnext<cr>"
 lvim.keys.normal_mode["<s-tab>"] = ":bprevious<cr>"
 lvim.keys.normal_mode["<C-n>"] = ":NvimTreeToggle<cr>"
 lvim.keys.normal_mode["Z"] = "za"
+-- toggleterm
+lvim.keys.visual_mode["<leader>ts"] = ":lua vim.cmd [[ToggleTermSendVisualSelection ]] <cr>"
+lvim.keys.normal_mode["<leader>ts"] = "<cmd>ToggleTermSendCurrentLine<cr>"
 
 -- tips for Replace a word with yanked text.
 -- ref: https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text

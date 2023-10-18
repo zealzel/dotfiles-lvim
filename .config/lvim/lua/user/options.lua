@@ -3,6 +3,17 @@ lvim.builtin.comment.active = true
 lvim.builtin.comment.mappings.basic = true
 lvim.builtin.comment.mappings.extra = true
 lvim.builtin.comment.pre_hook = nil
+-- toggleterm
+lvim.builtin.terminal.shell = "bash"
+--[[
+When opening a new terminal window, choose diffrent configuration such as
+  direction = "float" | "horizontal" | "vertical"
+  size = 20 | 40 | 60 | 80 | 100
+  ex:
+    :ToggleTerm direction=float size=20
+Once the terminal window is open, these value can't be changed
+]]
+
 --
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 0
