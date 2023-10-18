@@ -172,6 +172,11 @@ local m_mappings = {
   ["."] = { '<cmd>lua require("harpoon.ui").nav_next()<cr>', "Harpoon Next" },
   [","] = { '<cmd>lua require("harpoon.ui").nav_prev()<cr>', "Harpoon Prev" },
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+  ["1"] = { '<cmd>lua require("harpoon.ui").nav_file(1)<cr>', "Harpoon nav1" },
+  ["2"] = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "Harpoon nav2" },
+  ["3"] = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "Harpoon nav3" },
+  ["4"] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "Harpoon nav4" },
 }
+
 
 which_key.register(m_mappings, m_opts)
