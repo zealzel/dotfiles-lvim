@@ -148,7 +148,7 @@ lvim.plugins = {
   {
     "hrsh7th/cmp-nvim-lua",
     config = function()
-      require("cmp").setup({})
+      require("cmp").setup()
     end
   },
 
@@ -157,6 +157,25 @@ lvim.plugins = {
   --================================================
   -- Experiments
   --================================================
+  { -- This plugin
+    "Zeioth/compiler.nvim",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    dependencies = { "stevearc/overseer.nvim" },
+    opts = {},
+  },
+  { -- The task runner we use
+    "stevearc/overseer.nvim",
+    commit = "400e762648b70397d0d315e5acaf0ff3597f2d8b",
+    cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+    opts = {
+      task_list = {
+        direction = "bottom",
+        min_height = 25,
+        max_height = 25,
+        default_detail = 1
+      },
+    },
+  },
   -- https://betterprogramming.pub/lunarvim-debugging-testing-python-code-fa84f804c469
   "mfussenegger/nvim-dap-python",
   "nvim-neotest/neotest",
@@ -195,6 +214,16 @@ lvim.plugins = {
     end
   },
   "jay-babu/mason-null-ls.nvim",
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("mason-nvim-dap").setup()
+    end,
+    opts = {
+      handlers = {}
+    },
+  },
   -- { not working
   --   "max397574/better-escape.nvim",
   --   config = function()

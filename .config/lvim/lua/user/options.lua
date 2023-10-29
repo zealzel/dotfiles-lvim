@@ -85,3 +85,8 @@ autocmd("BufWinEnter", {
   group = save_fold,
 })
 
+-- Open compiler
+vim.api.nvim_buf_set_keymap(0, 'n', '<F6>', "<cmd>CompilerOpen<cr>", { noremap = true, silent = true })
+
+-- Toggle compiler results
+vim.api.nvim_buf_set_keymap(0, 'n', '<S-F7>', "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })

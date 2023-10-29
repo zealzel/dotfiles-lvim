@@ -22,6 +22,8 @@ require("mason-null-ls").setup({
     "flake8",
     "jsonlint",
     "yamllint",
+    "codelldb",
+    "debugpy",
   }
 })
 
