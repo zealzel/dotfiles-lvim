@@ -6,6 +6,7 @@ reload("user.plugins")
 reload("user.surround")
 reload("user.comment")
 reload("user.theme")
+reload("user.dap")
 
 lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
