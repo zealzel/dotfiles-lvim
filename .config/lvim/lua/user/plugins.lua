@@ -132,6 +132,7 @@ lvim.plugins = {
   -- common usages:
   --    During merge stage, :DiffviewOpen -> 2do (master) or 3do (branch to merge)
   --    Find history of one file, :DiffviewFileHistory %
+  --    navigate to next/prev changes -> ]c / [c
   "sindrets/diffview.nvim",
 
   {
@@ -288,12 +289,12 @@ lvim.plugins = {
       "nvim-telescope/telescope.nvim"
     }
   },
-  {
-    'nosduco/remote-sshfs.nvim',
-    config = function()
-      require("remote-sshfs").setup({})
-    end,
-  },
+  -- {
+  --   'nosduco/remote-sshfs.nvim',
+  --   config = function()
+  --     require("remote-sshfs").setup({})
+  --   end,
+  -- },
   {
     -- https://www.reddit.com/r/neovim/comments/zxo111/neorg_does_not_install_at_all/
     'nvim-neorg/neorg',

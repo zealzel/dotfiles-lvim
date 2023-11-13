@@ -176,6 +176,10 @@ local m_mappings = {
   ["2"] = { '<cmd>lua require("harpoon.ui").nav_file(2)<cr>', "Harpoon nav2" },
   ["3"] = { '<cmd>lua require("harpoon.ui").nav_file(3)<cr>', "Harpoon nav3" },
   ["4"] = { '<cmd>lua require("harpoon.ui").nav_file(4)<cr>', "Harpoon nav4" },
+  ["5"] = { '<cmd>lua require("harpoon.ui").nav_file(5)<cr>', "Harpoon nav5" },
+  ["6"] = { '<cmd>lua require("harpoon.ui").nav_file(6)<cr>', "Harpoon nav6" },
+  ["7"] = { '<cmd>lua require("harpoon.ui").nav_file(7)<cr>', "Harpoon nav7" },
+  ["8"] = { '<cmd>lua require("harpoon.ui").nav_file(8)<cr>', "Harpoon nav8" },
 }
 
 
