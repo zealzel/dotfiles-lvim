@@ -215,12 +215,12 @@ lvim.plugins = {
   "kevinhwang91/nvim-bqf",
   -- "christianchiarulli/harpoon",
   "ThePrimeagen/harpoon",
-  {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require('neoscroll').setup()
-    end
-  },
+  -- {
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require('neoscroll').setup()
+  --   end
+  -- },
   "jay-babu/mason-null-ls.nvim",
   {
     "jay-babu/mason-nvim-dap.nvim",
