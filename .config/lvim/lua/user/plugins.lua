@@ -1,4 +1,9 @@
 -- Additional Plugins
+
+-- for image.nvim. ref: https://github.com/3rd/image.nvim?tab=readme-ov-file
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
+package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+
 lvim.plugins = {
 
     -- My preferred colorscheme
@@ -258,7 +263,7 @@ lvim.plugins = {
     --     require('neoscroll').setup()
     --   end
     -- },
-    "jay-babu/mason-null-ls.nvim",
+    -- "jay-babu/mason-null-ls.nvim",
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",
@@ -296,22 +301,58 @@ lvim.plugins = {
     "junegunn/vim-peekaboo",
     "m00qek/baleia.nvim",
     {
-        "samodostal/image.nvim",
+        "3rd/image.nvim",
         config = function()
-            require('image').setup {
-                render = {
-                    min_padding = 5,
-                    show_label = true,
-                    use_dither = true,
-                    foreground_color = false,
-                    background_color = false
+            require("image").setup({
+                backend = "kitty",
+                integrations = {
+                    markdown = {
+                        enabled = true,
+                        clear_in_insert_mode = false,
+                        download_remote_images = true,
+                        only_render_image_at_cursor = false,
+                        filetypes = { "markdown", "vimwiki" }, -- markdown extensions (ie. quarto) can go here
+                    },
+                    neorg = {
+                        enabled = true,
+                        clear_in_insert_mode = false,
+                        download_remote_images = true,
+                        only_render_image_at_cursor = false,
+                        filetypes = { "norg" },
+                    },
                 },
-                events = {
-                    update_on_nvim_resize = true,
-                },
-            }
+                max_width = nil,
+                max_height = nil,
+                max_width_window_percentage = nil,
+                max_height_window_percentage = 50,
+                window_overlap_clear_enabled = false,                                     -- toggles images when windows are overlapped
+                window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+                -- editor_only_render_when_focused = false,                                  -- auto show/hide images when the editor gains/looses focus
+                editor_only_render_when_focused = true,                                  -- auto show/hide images when the editor gains/looses focus
+                tmux_show_only_in_active_window = true,                                  -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+                -- tmux_show_only_in_active_window = false,                                  -- auto show/hide images in the correct Tmux window (needs visual-activity off)
+                hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp" }, -- render image files as images when opened
+            })
         end,
+
     },
+    -- {
+    --     "samodostal/image.nvim",
+    --     config = function()
+    --         require('image').setup {
+    --             render = {
+    --                 min_padding = 5,
+    --                 show_label = true,
+    --                 use_dither = true,
+    --                 foreground_color = false,
+    --                 background_color = false
+    --             },
+    --             events = {
+    --                 update_on_nvim_resize = true,
+    --             },
+    --         }
+    --     end,
+    -- },
     {
         "jackMort/ChatGPT.nvim",
         event = "VeryLazy",

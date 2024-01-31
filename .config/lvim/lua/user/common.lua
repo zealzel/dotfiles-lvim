@@ -12,21 +12,21 @@ lvim.lsp.installer.setup.ensure_installed = {
   "bashls",
 }
 
-require("mason-null-ls").setup({
-  ensure_installed = {
-    "stylua",
-    "jq",
-    "shellharden",
-    "shfmt",
-    "prettier",
-    "black",
-    "flake8",
-    "jsonlint",
-    "yamllint",
-    "codelldb",
-    "debugpy",
-  }
-})
+-- require("mason-null-ls").setup({
+--   ensure_installed = {
+--     "stylua",
+--     "jq",
+--     "shellharden",
+--     "shfmt",
+--     "prettier",
+--     "black",
+--     "flake8",
+--     "jsonlint",
+--     "yamllint",
+--     "codelldb",
+--     "debugpy",
+--   }
+-- })
 
 lvim.format_on_save = false
 -- lvim.lsp.diagnostics.virtual_text = false
