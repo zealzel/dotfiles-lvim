@@ -21,6 +21,8 @@ lvim.keys.visual_mode["p"] = { '""p:let @"=@0<CR>', opts }
 lvim.keys.normal_mode["<C-g>"] = ":vertical :Git <CR>"
 lvim.keys.normal_mode["<leader>D"] = ":DiffviewOpen <CR>"
 lvim.keys.normal_mode["<leader>C"] = ":DiffviewClose <CR>"
+
+lvim.keys.normal_mode["ga"] = { "<Plug>(EasyAlign)", opts }
 --
 -- lvim.keys.normal_mode["<leader>gh"] = ":Git hist<CR>"
 -- lvim.keys.normal_mode["<leader>gl"] = ":Git log<CR>"
