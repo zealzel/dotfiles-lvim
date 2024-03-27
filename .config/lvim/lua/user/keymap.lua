@@ -23,6 +23,15 @@ lvim.keys.normal_mode["<leader>D"] = ":DiffviewOpen <CR>"
 lvim.keys.normal_mode["<leader>C"] = ":DiffviewClose <CR>"
 
 lvim.keys.normal_mode["ga"] = { "<Plug>(EasyAlign)", opts }
+
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+
 --
 -- lvim.keys.normal_mode["<leader>gh"] = ":Git hist<CR>"
 -- lvim.keys.normal_mode["<leader>gl"] = ":Git log<CR>"

@@ -163,6 +163,11 @@ lvim.plugins = {
     --================================================
     -- Experiments
     --================================================
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+    },
     "junegunn/vim-easy-align",
     {
         "epwalsh/obsidian.nvim",
@@ -377,13 +382,10 @@ lvim.plugins = {
     --   end,
     -- },
     {
-        -- https://www.reddit.com/r/neovim/comments/zxo111/neorg_does_not_install_at_all/
-        'nvim-neorg/neorg',
-        ft = 'norg',                   -- lazy load on filetype
-        cmd = 'Neorg',                 -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
-        --  (you could also just remove both lazy loading things)
-        priority = 30,                 -- treesitter is on default priority of 50, neorg should load after it.
-        build = ":Neorg sync-parsers", -- This is the important bit!
+        "nvim-neorg/neorg",
+        dependencies = { "luarocks.nvim" },
+        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        version = "*", -- Pin Neorg to the latest stable release
         config = function()
             require('neorg').setup {
                 configure_parsers = true,
@@ -394,10 +396,22 @@ lvim.plugins = {
                     ["core.concealer"] = {
                         config = {
                             folds = true,
-                            icon_preset = "diamond"
+                            -- icon_preset = "diamond",
+                            icons = {
+                                code_block = {
+                                    conceal = true,
+                                    width = "content",
+                                    min_width = 85,
+                                },
+                                -- ordered = {
+                                --     icons = { "item 1.", "[0]", "A.", "a.", "§ 1)", "I.", "i.", "⒈", "⑴", "Ⓐ", "ⓐ" },
+                                -- },
+                                -- list = {
+                                --     icons = { "*", " +", "  -", "   >" },
+                                -- },
+                            },
                         }
                     },                  -- Adds pretty icons to your documents
-
                     ["core.dirman"] = { -- Manages Neorg workspaces
                         config = {
                             workspaces = {
@@ -417,8 +431,51 @@ lvim.plugins = {
                 },
                 highlight = { enable = true, },
             }
-        end
+        end,
     },
+    -- {
+    --     -- https://www.reddit.com/r/neovim/comments/zxo111/neorg_does_not_install_at_all/
+    --     'nvim-neorg/neorg',
+    --     ft = 'norg',   -- lazy load on filetype
+    --     cmd = 'Neorg', -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
+    --     --  (you could also just remove both lazy loading things)
+    --     priority = 30, -- treesitter is on default priority of 50, neorg should load after it.
+    --     -- build = ":Neorg sync-parsers", -- This is the important bit!
+    --     config = function()
+    --         require('neorg').setup {
+    --             configure_parsers = true,
+    --             install_parsers = true,
+    --             load = {
+    --                 ['core.defaults'] = {},
+    --                 -- ["core.concealer"] = {}, -- Adds pretty icons to your documents
+    --                 ["core.concealer"] = {
+    --                     config = {
+    --                         folds = true,
+    --                         icon_preset = "diamond"
+    --                     }
+    --                 },                  -- Adds pretty icons to your documents
+
+    --                 ["core.dirman"] = { -- Manages Neorg workspaces
+    --                     config = {
+    --                         workspaces = {
+    --                             notes = "~/notes",
+    --                             tests = "~/vaults/neorg/tests",
+    --                         },
+    --                         default_workspace = "notes",
+    --                     },
+    --                 },
+    --                 ["core.export"] = {},
+    --                 ["core.export.markdown"] = {},
+    --                 ["core.summary"] = {
+    --                     config = {
+    --                         strategy = "default",
+    --                     },
+    --                 },
+    --             },
+    --             highlight = { enable = true, },
+    --         }
+    --     end
+    -- },
     {
         "folke/paint.nvim",
         config = function()
@@ -461,21 +518,6 @@ lvim.plugins = {
                 -- highlights = highlights,
                 highlights = highlights_norg,
             })
-
-            -- require("paint").setup({
-            --   ---@type PaintHighlight[]
-
-            --   highlights = {
-            --     {
-            --       -- filter can be a table of buffer options that should match,
-            --       -- or a function called with buf as param that should return true.
-            --       -- The example below will paint @something in comments with Constant
-            --       filter = { filetype = "lua" },
-            --       pattern = "%s*%-%-%-%s*(@%w+)",
-            --       hl = "Constant",
-            --     },
-            --   },
-            -- })
         end,
     },
     {
