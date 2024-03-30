@@ -428,6 +428,12 @@ lvim.plugins = {
                             strategy = "default",
                         },
                     },
+                    ["core.completion"] = {
+                        config = {
+                            engine = "nvim-cmp",
+                            name = "[Neorg]",
+                        }
+                    },
                 },
                 highlight = { enable = true, },
             }
