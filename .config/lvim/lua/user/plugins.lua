@@ -1,9 +1,5 @@
 -- Additional Plugins
 
--- for image.nvim. ref: https://github.com/3rd/image.nvim?tab=readme-ov-file
-package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
-
 lvim.plugins = {
 
     -- My preferred colorscheme
