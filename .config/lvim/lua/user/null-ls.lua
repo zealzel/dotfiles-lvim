@@ -5,6 +5,7 @@ linters.setup({
   { command = "hadolint" },
   { command = "jsonlint" },
   { command = "yamllint" },
+  { command = "eslint_d" },
 })
 
 
@@ -35,6 +36,7 @@ formatters.setup({
       "json",
       "markdown",
       "yaml",
+      "javascript",
     },
   },
 })
