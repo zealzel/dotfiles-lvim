@@ -7,7 +7,7 @@ package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/shar
 lvim.plugins = {
 
     -- My preferred colorscheme
-    "morhetz/gruvbox",
+    "ellisonleao/gruvbox.nvim",
     "ajmwagar/vim-deus",
     { "catppuccin/nvim",       name = "catppuccin" },
     { "arturgoms/moonbow.nvim" },
