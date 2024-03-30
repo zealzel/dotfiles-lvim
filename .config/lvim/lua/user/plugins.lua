@@ -192,7 +192,18 @@ lvim.plugins = {
     "nvim-pack/nvim-spectre",
     "kevinhwang91/nvim-bqf",
     "ThePrimeagen/harpoon",
-    "jay-babu/mason-null-ls.nvim",
+    {
+        "jay-babu/mason-null-ls.nvim",
+        config = function()
+            require("mason-null-ls").setup({
+                ensure_installed = {
+                    "stylua",
+                    "black",
+                    "ruff",
+                }
+            })
+        end,
+    },
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",
