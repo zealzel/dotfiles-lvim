@@ -274,7 +274,7 @@ lvim.plugins = {
     --     require('neoscroll').setup()
     --   end
     -- },
-    -- "jay-babu/mason-null-ls.nvim",
+    "jay-babu/mason-null-ls.nvim",
     {
         "jay-babu/mason-nvim-dap.nvim",
         event = "VeryLazy",

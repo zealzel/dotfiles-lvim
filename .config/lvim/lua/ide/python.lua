@@ -34,8 +34,8 @@ lvim.builtin.treesitter.ensure_installed = {
 }
 
 -- Set a formatter.
--- local formatters = require("lvim.lsp.null-ls.formatters")
-local formatters = require("lvim.lsp.null_ls.formatters")
+local formatters = require("lvim.lsp.null-ls.formatters")
+-- local formatters = require("lvim.lsp.null_ls.formatters")
 formatters.setup({
   {
     command = "black",
@@ -46,8 +46,8 @@ formatters.setup({
 })
 
 -- Set a linter.
--- local linters = require("lvim.lsp.null-ls.linters")
-local linters = require("lvim.lsp.null_ls.linters")
+local linters = require("lvim.lsp.null-ls.linters")
+-- local linters = require("lvim.lsp.null_ls.linters")
 linters.setup({
   {
     command = "ruff",

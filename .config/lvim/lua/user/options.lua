@@ -4,7 +4,7 @@ lvim.builtin.comment.mappings.basic = true
 lvim.builtin.comment.mappings.extra = true
 lvim.builtin.comment.pre_hook = nil
 -- toggleterm
--- lvim.builtin.terminal.shell = "bash"
+lvim.builtin.terminal.shell = "$(echo $0)"
 --[[
 When opening a new terminal window, choose diffrent configuration such as
   direction = "float" | "horizontal" | "vertical"
