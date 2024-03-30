@@ -266,14 +266,19 @@ lvim.plugins = {
     -- },
     "nvim-pack/nvim-spectre",
     "kevinhwang91/nvim-bqf",
-    -- "christianchiarulli/harpoon",
     "ThePrimeagen/harpoon",
-    -- {
-    --   "karb94/neoscroll.nvim",
-    --   config = function()
-    --     require('neoscroll').setup()
-    --   end
-    -- },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        config = function()
+            require("mason-null-ls").setup({
+                ensure_installed = {
+                    "stylua",
+                    "black",
+                    "ruff",
+                }
+            })
+        end,
+    },
     "jay-babu/mason-null-ls.nvim",
     {
         "jay-babu/mason-nvim-dap.nvim",
@@ -285,12 +290,6 @@ lvim.plugins = {
             handlers = {}
         },
     },
-    -- { not working
-    --   "max397574/better-escape.nvim",
-    --   config = function()
-    --     require("better_escape").setup({})
-    --   end
-    -- },
     -- To allow copilot to work with cmp. https://github.com/LunarVim/LunarVim/issues/1856
     {
         "github/copilot.vim",
