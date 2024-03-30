@@ -12,7 +12,12 @@ lvim.plugins = {
     { "catppuccin/nvim",       name = "catppuccin" },
     { "arturgoms/moonbow.nvim" },
     -- Syntax aware text-objects, select, move, swap, and peek support.
-    "nvim-treesitter/nvim-treesitter-textobjects",
+    {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        dependencies = { "nvim-treesitter/nvim-treesitter", },
+        -- javascript issues ref: https://www.reddit.com/r/lunarvim/comments/1bakcz2/how_to_use_text_objects_from_the/
+        commit = "55e13ca"
+    },
     -- Whenever cursor jumps some distance or moves between windows, it will flash so you can see where it is
     "DanilaMihailov/beacon.nvim",
     -- A Git wrapper so awesome, it should be illegal
