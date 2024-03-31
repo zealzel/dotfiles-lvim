@@ -169,8 +169,12 @@ lvim.plugins = {
     -- Experiments
     --================================================
     {
+        -- https://github.com/vhyrro/luarocks.nvim
         "vhyrro/luarocks.nvim",
         priority = 1000,
+        opts = {
+            rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim" }
+        },
         config = true,
     },
     "junegunn/vim-easy-align",
@@ -387,8 +391,13 @@ lvim.plugins = {
     -- },
     {
         "nvim-neorg/neorg",
+        -- commit = "f01698c203ad3bdc6166e752ba834c75fc1cfd87",
+        -- commit = "4cbedbb", -- v7.0.0
+        -- commit = "a67b41f", -- v8.0.0
+        -- commit = "0e7b80e", -- v8.1.0
+        -- commit = "c72b915", -- v8.2.1
         dependencies = { "luarocks.nvim" },
-        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release
         config = function()
             require('neorg').setup {
@@ -446,6 +455,8 @@ lvim.plugins = {
     -- {
     --     -- https://www.reddit.com/r/neovim/comments/zxo111/neorg_does_not_install_at_all/
     --     'nvim-neorg/neorg',
+    --     commit = "f01698c203ad3bdc6166e752ba834c75fc1cfd87",
+    --     -- commit = "a67b41f", -- v8.0.0
     --     ft = 'norg',   -- lazy load on filetype
     --     cmd = 'Neorg', -- lazy load on command, allows you to autocomplete :Neorg regardless of whether it's loaded yet
     --     --  (you could also just remove both lazy loading things)
