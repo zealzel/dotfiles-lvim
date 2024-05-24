@@ -173,7 +173,7 @@ lvim.plugins = {
         "vhyrro/luarocks.nvim",
         priority = 1000,
         opts = {
-            rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim" }
+            rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim", "pathlib.nvim" }
         },
         config = true,
     },
@@ -397,7 +397,7 @@ lvim.plugins = {
         -- commit = "0e7b80e", -- v8.1.0
         -- commit = "c72b915", -- v8.2.1
         dependencies = { "luarocks.nvim" },
-        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        lazy = false,  -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release
         config = function()
             require('neorg').setup {
@@ -410,10 +410,12 @@ lvim.plugins = {
                         config = {
                             folds = true,
                             -- icon_preset = "diamond",
+                            icon_preset = "varied",
                             icons = {
                                 code_block = {
                                     conceal = true,
                                     width = "content",
+                                    content_only = true,
                                     min_width = 85,
                                 },
                                 -- ordered = {
@@ -435,7 +437,12 @@ lvim.plugins = {
                         },
                     },
                     ["core.export"] = {},
-                    ["core.export.markdown"] = {},
+                    ["core.export.markdown"] = {
+                        config = {
+                            extension = "md",
+                            extensions = "all",
+                        }
+                    },
                     ["core.summary"] = {
                         config = {
                             strategy = "default",
@@ -445,6 +452,11 @@ lvim.plugins = {
                         config = {
                             engine = "nvim-cmp",
                             name = "[Neorg]",
+                        }
+                    },
+                    ["core.presenter"] = {
+                        config = {
+                            zen_mode = "zen-mode",
                         }
                     },
                 },
@@ -497,6 +509,15 @@ lvim.plugins = {
     --         }
     --     end
     -- },
+
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    },
     {
         "folke/paint.nvim",
         config = function()
