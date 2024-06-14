@@ -295,23 +295,40 @@ lvim.plugins = {
         },
     },
     -- To allow copilot to work with cmp. https://github.com/LunarVim/LunarVim/issues/1856
+    -- {
+    --     "github/copilot.vim",
+    --     -- disable = not lvim.builtin.sell_soul_to_devel,
+    --     config = function()
+    --         -- copilot assume mapped
+    --         vim.g.copilot_assume_mapped = true
+    --         vim.g.copilot_no_tab_map = true
+    --     end
+    -- },
+    --     "hrsh7th/cmp-copilot",
+    --     -- disable = not lvim.builtin.sell_soul_to_devel,
+    --     config = function()
+    --         lvim.builtin.cmp.formatting.source_names["copilot"] = "(Cop)"
+    --         table.insert(lvim.builtin.cmp.sources, { name = "copilot" })
+    --     end
+    -- },
     {
-        "github/copilot.vim",
-        -- disable = not lvim.builtin.sell_soul_to_devel,
+        "zbirenbaum/copilot.lua",
         config = function()
-            -- copilot assume mapped
-            vim.g.copilot_assume_mapped = true
-            vim.g.copilot_no_tab_map = true
-        end
-    },
-    {
-        "hrsh7th/cmp-copilot",
-        -- disable = not lvim.builtin.sell_soul_to_devel,
-        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
             lvim.builtin.cmp.formatting.source_names["copilot"] = "(Cop)"
-            table.insert(lvim.builtin.cmp.sources, { name = "copilot" })
+            table.insert(lvim.builtin.cmp.sources, { name = "copilot", group_index=2})
         end
     },
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    },
+    -- {
     "junegunn/vim-peekaboo",
     "m00qek/baleia.nvim",
     {
