@@ -22,6 +22,7 @@ vim.opt.modeline = false
 vim.opt.timeoutlen = 1000
 vim.opt.conceallevel = 2 -- so that links cam be shorten in neog, ref: https://github.com/nvim-neorg/neorg/issues/40#issuecomment-890300243
 vim.opt.termguicolors = true
+vim.opt.ignorecase = false
 -- backup = false, -- creates a backup file
 -- clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 -- cmdheight = 1, -- neovim command line for displaying messages

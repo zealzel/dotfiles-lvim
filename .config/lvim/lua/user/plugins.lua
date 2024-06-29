@@ -12,11 +12,15 @@ lvim.plugins = {
     { "catppuccin/nvim",       name = "catppuccin" },
     { "arturgoms/moonbow.nvim" },
     -- Syntax aware text-objects, select, move, swap, and peek support.
+    -- {
+    --     "nvim-treesitter/nvim-treesitter-textobjects",
+    --     dependencies = { "nvim-treesitter/nvim-treesitter", },
+    --     -- javascript issues ref: https://www.reddit.com/r/lunarvim/comments/1bakcz2/how_to_use_text_objects_from_the/
+    --     commit = "55e13ca"
+    -- },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
         dependencies = { "nvim-treesitter/nvim-treesitter", },
-        -- javascript issues ref: https://www.reddit.com/r/lunarvim/comments/1bakcz2/how_to_use_text_objects_from_the/
-        commit = "55e13ca"
     },
     -- Whenever cursor jumps some distance or moves between windows, it will flash so you can see where it is
     "DanilaMihailov/beacon.nvim",
@@ -349,8 +353,8 @@ lvim.plugins = {
                         enabled = true,
                         clear_in_insert_mode = false,
                         download_remote_images = true,
-                        -- only_render_image_at_cursor = false,
-                        only_render_image_at_cursor = true,
+                        only_render_image_at_cursor = false,
+                        -- only_render_image_at_cursor = true,
                         filetypes = { "norg" },
                     },
                 },
@@ -408,6 +412,7 @@ lvim.plugins = {
     -- },
     {
         "nvim-neorg/neorg",
+
         -- commit = "f01698c203ad3bdc6166e752ba834c75fc1cfd87",
         -- commit = "4cbedbb", -- v7.0.0
         -- commit = "a67b41f", -- v8.0.0
@@ -454,6 +459,14 @@ lvim.plugins = {
                         },
                     },
                     ["core.export"] = {},
+                    ["core.latex.renderer"] = {},
+                        -- config = {
+                        --     conceal = true,
+                        --     scale = 1,
+                        --     render_on_enter = true,
+                        --     renderer = "core.integrations.image",
+                        -- }
+                    -- },
                     ["core.export.markdown"] = {
                         config = {
                             extension = "md",
